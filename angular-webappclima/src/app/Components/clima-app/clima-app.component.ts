@@ -32,11 +32,11 @@ export class ClimaAppComponent implements OnInit {
     //let sunsetTime = new Date(this.WeatherData.sys.sunset * 1000 );
     //this.WeatherData.sunset_time = sunsetTime.toLocaleTimeString();
 
-    //Pega a cidade
-    this.WeatherData.cidade_nome = this.WeatherData.location.name;
+    //Consulta o nome da cidade 
+    this.WeatherData.cidade_nome = this.getCidadeNome();
     
     //Verifica pela horário se é dia ou noite 
-    this.WeatherData.isDay = this.WeatherData.current.is_day;
+    this.WeatherData.isDay = this.getE_Dia();
     
     //Pega e atribui a temp em °C 
     this.WeatherData.temp_celcius =  this.getClimaTemperaturaCelcius();
@@ -51,28 +51,59 @@ export class ClimaAppComponent implements OnInit {
     this.WeatherData.descricao = this.getClimaDescricao();
   }
 
+  //Pega valor se é dia ou noite
+  getE_Dia(){
+    let e_dia = this.WeatherData.current.is_day;
+    return e_dia
+  }
+
+  //Pega o nome da cidade 
+  getCidadeNome(){
+    let nome_cidade = this.WeatherData.location.name;
+    return nome_cidade
+  }
+
   //Pega a temperatura do clima em graus celcius °C
   getClimaTemperaturaCelcius(){
-    let temp_celcius = (this.WeatherData.main.temp - 273.15).toFixed(0);
+    let temp_celcius = this.WeatherData.current.temp_c;
     return temp_celcius
   }
 
   //Pega a temperatura max do clima em °C
   getClimaTemperaturaMinCelcius(){
-    let temp_min_celcius = (this.WeatherData.main.temp_min - 273.15).toFixed(0);
+    //let temp_min_celcius = (this.WeatherData.main.temp_min - 273.15).toFixed(0);
+    //return temp_min_celcius
+
+    let data_atual = new Date();
+    let hora_local = data_atual.getHours();
+
+
+    let forecast_keys = this.WeatherData.forecast.forecastday.find(function(item:any){return item });
+    let temp_min_celcius = forecast_keys.day.mintemp_c
+    //let hours_key = forecast_keys.hour[hora_local];
+    //console.log(temp_min_celcius);
     return temp_min_celcius
   }
 
   //Pega a temperatura max do clima em °C
   getClimaTemperaturaMaxCelcius(){
-    let temp_max_celcius = (this.WeatherData.main.temp_max - 273.15).toFixed(0);
+    //let temp_max_celcius = (this.WeatherData.main.temp_max - 273.15).toFixed(0);
+    //return temp_max_celcius
+    let forecast_keys = this.WeatherData.forecast.forecastday.find(function(item:any){return item });
+    let temp_max_celcius = forecast_keys.day.maxtemp_c
+    //console.log(temp_max_celcius)
     return temp_max_celcius
   }
 
   //Pega a descrição do clima
   getClimaDescricao(){
-    let weather_keys = this.WeatherData.weather.find(function(item:any){return item })
+    //OpenWeatherAPI
+    //let weather_keys = this.WeatherData.weather.find(function(item:any){return item })
     //console.log(weather_keys.description);
-    return weather_keys.description
+
+    //WeatherAPI
+    let descricao = this.WeatherData.current.condition.text;
+    //console.log(descricao);
+    return descricao
   }
 }
