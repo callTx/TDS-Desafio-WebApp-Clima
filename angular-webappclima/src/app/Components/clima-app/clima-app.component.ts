@@ -35,41 +35,43 @@ export class ClimaAppComponent implements OnInit {
     //Consulta o nome da cidade 
     this.WeatherData.cidade_nome = this.getCidadeNome();
     
-    //Verifica pela horário se é dia ou noite 
+    //Recupera o valor se é dia ou noite 
     this.WeatherData.isDay = this.getE_Dia();
     
-    //Pega e atribui a temp em °C 
+    //Recupera e atribui a temp em °C 
     this.WeatherData.temp_celcius =  this.getClimaTemperaturaCelcius();
 
-    //Pega e atribui a temp minima em °C
+    //Recupera e atribui a temp minima em °C
     this.WeatherData.temp_min_celcius = this.getClimaTemperaturaMinCelcius();
 
-    //Pega e atribui a tem maxima em °C
+    //Recupera e atribui a tem maxima em °C
     this.WeatherData.temp_max_celcius = this.getClimaTemperaturaMaxCelcius();
 
-    //Pega e atribui a descricao geral do clima
+    //Recupera e atribui a descricao geral do clima
     this.WeatherData.descricao = this.getClimaDescricao();
+
+    //Recupera a atribui 
   }
 
-  //Pega valor se é dia ou noite
+  //Recupera valor se é dia ou noite
   getE_Dia(){
     let e_dia = this.WeatherData.current.is_day;
     return e_dia
   }
 
-  //Pega o nome da cidade 
+  //Recupera o nome da cidade 
   getCidadeNome(){
     let nome_cidade = this.WeatherData.location.name;
     return nome_cidade
   }
 
-  //Pega a temperatura do clima em graus celcius °C
+  //Recupera a temperatura do clima em graus celcius °C
   getClimaTemperaturaCelcius(){
     let temp_celcius = this.WeatherData.current.temp_c;
     return temp_celcius
   }
 
-  //Pega a temperatura max do clima em °C
+  //Recupera a temperatura max do clima em °C
   getClimaTemperaturaMinCelcius(){
     //let temp_min_celcius = (this.WeatherData.main.temp_min - 273.15).toFixed(0);
     //return temp_min_celcius
@@ -85,7 +87,7 @@ export class ClimaAppComponent implements OnInit {
     return temp_min_celcius
   }
 
-  //Pega a temperatura max do clima em °C
+  //Recupera a temperatura max do clima em °C
   getClimaTemperaturaMaxCelcius(){
     //let temp_max_celcius = (this.WeatherData.main.temp_max - 273.15).toFixed(0);
     //return temp_max_celcius
@@ -95,7 +97,7 @@ export class ClimaAppComponent implements OnInit {
     return temp_max_celcius
   }
 
-  //Pega a descrição do clima
+  //Recupera a descrição do clima
   getClimaDescricao(){
     //OpenWeatherAPI
     //let weather_keys = this.WeatherData.weather.find(function(item:any){return item })
