@@ -1,3 +1,5 @@
+/* Componente Principal da Aplicação */
+
 import { Component } from '@angular/core';
 
 @Component({
