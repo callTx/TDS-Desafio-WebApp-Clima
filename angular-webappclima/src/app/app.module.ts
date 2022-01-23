@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ClimaAppComponent } from './Components/clima-app/clima-app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { PagHomeComponent } from './pag-home/pag-home.component';
 
 /* Declarado o Component clima-app.component em declarations*/
 @NgModule({
   /** Recebe Components, Directives, Pipes */
   declarations: [
     AppComponent,
-    ClimaAppComponent
+    ClimaAppComponent,
+    PagHomeComponent
   ],
   /*Recebe os imports do Modules*/
   imports: [

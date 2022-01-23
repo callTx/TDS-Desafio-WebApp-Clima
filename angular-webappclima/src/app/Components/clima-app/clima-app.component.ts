@@ -33,6 +33,8 @@ export class ClimaAppComponent implements OnInit {
   temp_morning: any;
   temp_afternoon: any;
   temp_night: any;
+
+  localidade = "London";
   
   
   constructor(private weatherapiservices: WeatherapiService,private el:ElementRef, private renderer:Renderer2  ) {
@@ -41,6 +43,7 @@ export class ClimaAppComponent implements OnInit {
 
  
   ngOnInit(): void {
+
     this.getNomeCidade();
     this.getClimaDescricao();
     this.getClimaTemperaturaCelcius();
@@ -52,9 +55,10 @@ export class ClimaAppComponent implements OnInit {
     this.getNightTemperatura();
   }
 
+
   //Recupera o nome da cidade 
   async getNomeCidade(){
-   this.data = await this.weatherapiservices.doGetWeatherApi();
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
     
     this.nome_cidade = this.data.location.name.toUpperCase();
     //console.log(this.nome_cidade);
@@ -62,7 +66,7 @@ export class ClimaAppComponent implements OnInit {
 
   //Recupera a temperatura do clima em graus celcius °C
   async getClimaTemperaturaCelcius(){
-    this.data = await this.weatherapiservices.doGetWeatherApi();
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
 
     this.temp_atual = this.data.current.temp_c;
     //console.log(this.temp_atual);
@@ -70,7 +74,7 @@ export class ClimaAppComponent implements OnInit {
 
   //Recupera a temperatura max do clima em °C
   async getClimaTemperaturaMinCelcius(){
-    this.data = await this.weatherapiservices.doGetWeatherApi();
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
 
 
     let data_atual = new Date();
@@ -85,7 +89,7 @@ export class ClimaAppComponent implements OnInit {
 
   //Recupera a temperatura max do clima em °C
   async getClimaTemperaturaMaxCelcius(){
-    this.data = await this.weatherapiservices.doGetWeatherApi();
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
 
     let forecast_keys = this.data.forecast.forecastday.find(function(item:any){return item });
     this.temp_max = forecast_keys.day.maxtemp_c
@@ -95,7 +99,7 @@ export class ClimaAppComponent implements OnInit {
   //Recupera a descrição do clima
   async getClimaDescricao(){
     
-    this.data = await this.weatherapiservices.doGetWeatherApi();
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
 
     this.descricao = this.data.current.condition.text;
     
@@ -105,8 +109,7 @@ export class ClimaAppComponent implements OnInit {
   //Recupera a temp de Dawn 3:00
   async getDawnTemperatura(){
 
-    this.data = await this.weatherapiservices.doGetWeatherApi();
-
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
     let forecast_keys = this.data.forecast.forecastday.find(function(item:any){return item });
     let hours_key = forecast_keys.hour[3];
 
@@ -117,8 +120,7 @@ export class ClimaAppComponent implements OnInit {
   //Recupera a temp de Morning 9:00
   async getMorningTemperatura(){
 
-    this.data = await this.weatherapiservices.doGetWeatherApi();
-
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
     let forecast_keys = this.data.forecast.forecastday.find(function(item:any){return item });
     let hours_key = forecast_keys.hour[9];
 
@@ -129,8 +131,7 @@ export class ClimaAppComponent implements OnInit {
   //Recupera a temp de Afternoon 15:00
   async getAfternoonTemperatura(){
 
-    this.data = await this.weatherapiservices.doGetWeatherApi();
-
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
     let forecast_keys = this.data.forecast.forecastday.find(function(item:any){return item });
     let hours_key = forecast_keys.hour[15];
 
@@ -141,8 +142,7 @@ export class ClimaAppComponent implements OnInit {
   //Recupera a temp de Night 21:00
   async getNightTemperatura(){
 
-    this.data = await this.weatherapiservices.doGetWeatherApi();
-
+    this.data = await this.weatherapiservices.doGetWeatherApi(this.localidade);
     let forecast_keys = this.data.forecast.forecastday.find(function(item:any){return item });
     let hours_key = forecast_keys.hour[21];
 

@@ -26,8 +26,8 @@ export class WeatherapiService {
     //this.getWeatherData();
   }
 
-  doGetWeatherApi(){
-    return this.httpClient.get(`http://api.weatherapi.com/v1/forecast.json?key=1e460c534dcd4c719f8233936222001&q=London&days=1&aqi=no&alerts=no`).toPromise();
+  doGetWeatherApi(localidade:string){
+    return this.httpClient.get(`http://api.weatherapi.com/v1/forecast.json?key=1e460c534dcd4c719f8233936222001&q=`+localidade+`&days=1&aqi=no&alerts=no`).toPromise();
   
   }
 
