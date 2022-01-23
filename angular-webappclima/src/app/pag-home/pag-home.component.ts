@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-pag-home',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private el: ElementRef,private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', 'black');
   }
 
 }
