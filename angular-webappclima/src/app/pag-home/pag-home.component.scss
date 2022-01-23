@@ -5,9 +5,11 @@
     height: 110px;
     width: 110px;
     left: 50%;
-    top: 50%;
+    top: 35%;
+    
 }
 
+   
 /*Estilo do icone nuvem*/
 svg {
   width: 110px;
@@ -150,9 +152,9 @@ path {
 
 /*  Cria estilo de clima sunny  */
 
-//Estiliza o texto do nome da cidade
+//Estiliza texto grande h1
 .text-h1 {
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     //font-family: Helvetica, 'Helvetica Neue', sans-serif;
     letter-spacing: 1px;
     text-align: center;
@@ -160,6 +162,64 @@ path {
     //font-weight: bold;
     margin-top: 20px;
     font-size: 35px;
-    color: #a0a0a0;
+    color: #ffffff;
     width: 200px;
+}
+
+.text-h2 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    //font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-left: -43px;
+    //font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    width: 200px;
+}
+
+.text-h3 {
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    //font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-left: -43px;
+    //font-weight: bold;
+    margin-top: 220px;
+    font-size: 30px;
+    color: #ffffff;
+    width: 200px;
+}
+
+.text-h3-1{
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    //font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-left: -103px;
+    //font-weight: bold;
+    margin-top: 30px;
+    font-size: 20px;
+    color:#ffffff;
+    width: 10px;
+}
+
+
+.globe {
+    //font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    
+    //font-weight: bold;
+    margin-top: 45px;
+    
+}
+
+.wrapper-texts{
+    display: grid;
+    grid-template-columns: 100px 150px 100px;
+    margin-top: 50px;
 }

@@ -9,6 +9,8 @@ import { ClimaAppComponent } from './Components/clima-app/clima-app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { PagHomeComponent } from './pag-home/pag-home.component';
+import { PagLocalidadeComponent } from './pag-localidade/pag-localidade.component';
+import { routing } from './app.routing';
 
 /* Declarado o Component clima-app.component em declarations*/
 @NgModule({
@@ -16,12 +18,14 @@ import { PagHomeComponent } from './pag-home/pag-home.component';
   declarations: [
     AppComponent,
     ClimaAppComponent,
-    PagHomeComponent
+    PagHomeComponent,
+    PagLocalidadeComponent
   ],
   /*Recebe os imports do Modules*/
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   /** Recebe os Services */
   providers: [],

@@ -10,7 +10,7 @@ export class PagHomeComponent implements OnInit {
   constructor(private el: ElementRef,private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', 'black');
+    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#0f0f0f');
   }
 
 }
