@@ -3,9 +3,89 @@
     <i class="material-icons left" >arrow_back</i>
 </a>
 
-<p>
+<!--
+<div class="preloader" style="opacity: 1;">
 
-    {{nomecidade}}
-</p>
+    <div class="text text-h1" >
+        {{nome_cidade}}
+    </div>
+    
+    <div class="text text-h2" >
+        <div class="wrapper-descricao">
+        {{descricao}}
+        </div>
+    </div>
+    
+    
 
+    <div class="text text-h3" >
+        <div class="wrapper-temp">
+            <div>
+                {{temp_atual}}
+            </div> 
+            
+            <div class="text text-h4">
+                °C
+            </div>
+            <div class="text text-h5 ">
+                <div class="wrapper-temp-min-max">
+                    <i class="material-icons left" >arrow_upward</i>
+                    {{temp_max}} 
+                    <div>°</div>
+                </div> 
+                <div class="wrapper-temp-min-max">
+                    <i class="material-icons left" >arrow_downward</i>
+                    {{temp_min}}
+                    <div>°</div>
+                </div>
+                 
+            </div> 
+        </div>
+         
+        
+    
 
+    </div>
+
+</div>
+
+-->
+
+<div class="container">
+    <div class="nomecidade">{{nomecidade}}</div>
+    <div class="descricao"> {{descricao}} </div>
+    <div class="temp_atual">  </div>
+    <div class="temp_atual_value"> {{temp_atual}} </div>
+    <div class="celcius_simbol">
+        <div class="celcius_simbol_value">°C</div>
+      </div>
+      <div class="temp_max">
+        <i class="material-icons left" >arrow_upward</i>
+        {{temp_max}}°
+      </div>
+      <div class="temp_min">
+        <i class="material-icons left" >arrow_downward</i>
+        {{temp_min}}°
+      </div>
+    <div class="icon_temp_atual"> <!--<img src={{url_icon_temp_atual}} alt="icon_temp_atual" width="200" height="200">--> </div>
+    <div class="text_dawn"> dawn </div>
+    <div class="text_morning"> morning</div>
+    <div class="text_afternoon"> afternoon </div>
+    <div class="text_night"> night </div>
+    <div class="icon_temp_dawn"> icon_temp_dawn</div>
+    <div class="icon_temp_morning"> icon_temp_morning </div>
+    <div class="icon_temp_afternoon"> icon_temp_afternoon </div>
+    <div class="icon_temp_night">icon_temp_night </div>
+    <div class="temp_dawn"> {{temp_dawn}}°C</div>
+    <div class="temp_morning"> {{temp_morning}}°C</div>
+    <div class="temp_afternoon"> {{temp_afternoon}}°C </div>
+    <div class="temp_night"> {{temp_night}}°C </div>
+    <div class="text_wind_speed"> wind speed </div>
+    <div class="text_sunrise"> sunrise </div>
+    <div class="text_sunset"> sunset </div>
+    <div class="text_humidity"> humidity</div>
+    <div class="veloc_vento_mps"> {{veloc_vento_mps}} </div>
+    <div class="horario_nascer_sol"> {{horario_nascer_sol}} </div>
+    <div class="horario_por_do_sol">{{horario_por_do_sol}}</div>
+    <div class="humidade"> {{humidade}} </div>
+  </div>

@@ -33,7 +33,6 @@ export class ClimaAppComponent implements OnInit {
   temp_morning: any;
   temp_afternoon: any;
   temp_night: any;
-
   localidade = "London";
   
   

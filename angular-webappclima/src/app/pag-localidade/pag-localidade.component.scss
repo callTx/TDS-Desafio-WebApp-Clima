@@ -1,29 +1,190 @@
-/*Estilo do icone nuvem*/
-svg {
-    width: 110px;
+/*
+.preloader {
+    position: absolute;
+    margin-left: -55px;
+    margin-top: -100px;
     height: 110px;
-}
-  
-//Estiliza o cortono do icone nuvem 
-path {
-    stroke: #9ea1a4;
-    stroke-width: 0.25;
-    fill: #241E20;
+    width: 110px;
+    left: 50%;
+    top: 30%;
 }
 
-//Estiliza o posicionamento do icone nuvem
-#cloud {
-    position: relative;
-    z-index: 2;
+//Estiliza o texto do nome da cidade
+.text {
+    font-family: Helvetica, 'Helvetica Neue', sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-left: -43px;
+    font-weight: bold;
+    margin-top: 10px;
+    //font-size: 40px;
+    color: #a0a0a0;
+    width: 100px;
 }
 
-//Estiliza o preenchimento do icone nuvem
-#cloud path {
-    fill: #efefef;
+.wrapper-descricao{
+    display: grid;
+    grid-template-columns: 190px 150px 100px;
+    margin-top: 10px;
 }
 
+.wrapper-temp{
+    display: grid;
+    grid-template-columns: 180px 100px 100px;
+    margin-top: 10px;
+}
+
+.wrapper-temp-min-max{
+    display: grid;
+    grid-template-columns: 40px 60px 50px;
+}
+
+.text-h1{
+    font-size:  40px;
+}
+
+.text-h2{
+    font-size: 20px;
+}
+
+.text-h3{
+    font-size: 80px;
+    margin-top: 25px;
+}
+
+.text-h4{
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.text-h5{
+    font-size: 20px;
+    margin-top: 30px;
+}
 //Estiliza texto grande h1
 .arrow-back {
     color: #000000;
     
 }
+*/
+
+/*Grid responsivo focado em mobile first*/
+//Estiliza texto grande h1
+.arrow-back {
+    color: #000000;
+    
+}
+
+.vl {
+    border-left: 2px solid gray;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 10px;
+}
+
+
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1.3fr 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nomecidade nomecidade nomecidade nomecidade"
+      "descricao descricao descricao descricao"
+      "temp_atual temp_atual celcius_simbol celcius_simbol"
+      "temp_atual temp_atual temp_max temp_max"
+      "temp_atual temp_atual temp_min temp_min"
+      "icon_temp_atual icon_temp_atual icon_temp_atual icon_temp_atual"
+      "text_dawn text_morning text_afternoon text_night"
+      "icon_temp_dawn icon_temp_morning icon_temp_afternoon icon_temp_night"
+      "temp_dawn temp_morning temp_afternoon temp_night"
+      "text_wind_speed text_sunrise text_sunset text_humidity"
+      "veloc_vento_mps horario_nascer_sol horario_por_do_sol humidade";
+  }
+  
+.nomecidade { grid-area: 1 / 1 / 2 / 5; text-align: center; font-size: 40px;}
+.descricao { grid-area: 2 / 1 / 3 / 5; text-align: center; font-size: 25px;}
+.temp_atual { grid-area: 3 / 1 / 6 / 3; }
+.celcius_simbol {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    "celcius_simbol_value . ."; 
+  grid-area: 3 / 3 / 4 / 5; 
+}
+.celcius_simbol_value { grid-area: celcius_simbol_value; font-size: 25px; }
+.temp_max {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "icon_arrow_upper . ."
+      "icon_arrow_upper . ."
+      "icon_arrow_upper . ."; 
+    grid-area: 4 / 3 / 5 / 5;
+    //margin-left: -30px;
+  }
+  .icon_arrow_upper { grid-area: icon_arrow_upper;}
+  .temp_min {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "icon_arrow_down . ."
+      "icon_arrow_down . ."
+      "icon_arrow_down . ."; 
+    grid-area: 5 / 3 / 6 / 5; 
+  }
+  .icon_arrow_down { grid-area: icon_arrow_down; }
+.icon_temp_atual { grid-area: 6 / 1 / 7 / 5; text-align: center; }
+.text_dawn { grid-area: 7 / 1 / 8 / 2; }
+.text_morning { grid-area: 7 / 2 / 8 / 3; }
+.text_afternoon { grid-area: 7 / 3 / 8 / 4; }
+.text_night { grid-area: 7 / 4 / 8 / 5; }
+.icon_temp_dawn { grid-area: 8 / 1 / 9 / 2; }
+.icon_temp_morning { grid-area: 8 / 2 / 9 / 3; }
+.icon_temp_afternoon { grid-area: 8 / 3 / 9 / 4; }
+.icon_temp_night { grid-area: 8 / 4 / 9 / 5; }
+.temp_dawn { grid-area: 9 / 1 / 10 / 2; }
+.temp_morning { grid-area: 9 / 2 / 10 / 3; }
+.temp_afternoon { grid-area: 9 / 3 / 10 / 4; }
+.temp_night { grid-area: 9 / 4 / 10 / 5; }
+.text_wind_speed { grid-area: 10 / 1 / 11 / 2; margin-top: 40px;  }
+.text_sunrise { grid-area: 10 / 2 / 11 / 3; margin-top: 40px; }
+.text_sunset { grid-area: 10 / 3 / 11 / 4; margin-top: 40px;}
+.text_humidity { grid-area: 10 / 4 / 11 / 5; margin-top: 40px;}
+.veloc_vento_mps { grid-area: 11 / 1 / 12 / 2;  margin-top: 40px;}
+.horario_nascer_sol { grid-area: 11 / 2 / 12 / 3; margin-top: 40px; }
+.horario_por_do_sol { grid-area: 11 / 3 / 12 / 4; margin-top: 40px; }
+.humidade { grid-area: 11 / 4 / 12 / 5; margin-top: 40px; }
+.temp_atual_value { grid-area: 4 / 2 / 6 / 3; text-align: right; font-size: 100px; }
+
+.text_dawn,.icon_temp_dawn,.temp_dawn,.text_wind_speed,.veloc_vento_mps{
+    text-align: center;
+}
+
+.text_morning,.icon_temp_morning,.temp_morning,.text_sunrise,.horario_nascer_sol{
+    text-align: center;
+}
+
+.text_afternoon,.icon_temp_afternoon,.temp_afternoon,.text_sunset,.horario_por_do_sol{
+    text-align: center;
+}
+
+.text_night,.icon_temp_night,.temp_night,.text_humidity,.humidade{
+    text-align: center;
+}
+
+.nomecidade,.descricao,.temp_atual,.celcius_simbol,.celcius_simbol_value,.temp_max,.temp_min,.text_dawn,.text_morning,.text_afternoon,.text_night,.temp_dawn,.temp_morning,.temp_afternoon,.temp_night,.text_wind_speed,.text_sunrise,.text_sunset,.text_humidity,.veloc_vento_mps,.horario_nascer_sol,.horario_por_do_sol,.humidade,.temp_atual_value {
+    font-family: Helvetica, 'Helvetica Neue', sans-serif;
+}
+  
