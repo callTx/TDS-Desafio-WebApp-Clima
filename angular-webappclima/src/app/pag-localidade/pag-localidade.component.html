@@ -1,6 +1,6 @@
 
 <a class="arrow-back" href="" routerLink="" style="text-decoration:none">
-    <i class="material-icons left" >arrow_back</i>
+    <i class="material-icons left" [ngStyle]="{'color': text_color_white? 'white' : 'black'}" >arrow_back</i>
 </a>
 
 <!--
@@ -51,41 +51,41 @@
 
 -->
 
-<div class="container">
-    <div class="nomecidade">{{nomecidade}}</div>
-    <div class="descricao"> {{descricao}} </div>
+<div class="container" >
+    <div class="nomecidade" [ngStyle]="{'color': text_color_white? 'white' : 'black'}">{{nomecidade}}</div>
+    <div class="descricao" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{descricao}} </div>
     <div class="temp_atual">  </div>
-    <div class="temp_atual_value"> {{temp_atual}} </div>
+    <div class="temp_atual_value"[ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{temp_atual}} </div>
     <div class="celcius_simbol">
-        <div class="celcius_simbol_value">°C</div>
+        <div class="celcius_simbol_value"[ngStyle]="{'color': text_color_white? 'white' : 'black'}">°C</div>
       </div>
-      <div class="temp_max">
-        <i class="material-icons left" >arrow_upward</i>
+      <div class="temp_max" [ngStyle]="{'color': text_color_white? 'white' : 'black'}">
+        <i class="material-icons left" [ngStyle]="{'color': text_color_white? 'white' : 'black'}">arrow_upward</i>
         {{temp_max}}°
       </div>
-      <div class="temp_min">
-        <i class="material-icons left" >arrow_downward</i>
+      <div class="temp_min" [ngStyle]="{'color': text_color_white? 'white' : 'black'}">
+        <i class="material-icons left" [ngStyle]="{'color': text_color_white? 'white' : 'black'}" >arrow_downward</i>
         {{temp_min}}°
       </div>
-    <div class="icon_temp_atual"> <!--<img src={{url_icon_temp_atual}} alt="icon_temp_atual" width="200" height="200">--> </div>
-    <div class="text_dawn"> dawn </div>
-    <div class="text_morning"> morning</div>
-    <div class="text_afternoon"> afternoon </div>
-    <div class="text_night"> night </div>
-    <div class="icon_temp_dawn"> icon_temp_dawn</div>
-    <div class="icon_temp_morning"> icon_temp_morning </div>
-    <div class="icon_temp_afternoon"> icon_temp_afternoon </div>
-    <div class="icon_temp_night">icon_temp_night </div>
-    <div class="temp_dawn"> {{temp_dawn}}°C</div>
-    <div class="temp_morning"> {{temp_morning}}°C</div>
-    <div class="temp_afternoon"> {{temp_afternoon}}°C </div>
-    <div class="temp_night"> {{temp_night}}°C </div>
-    <div class="text_wind_speed"> wind speed </div>
-    <div class="text_sunrise"> sunrise </div>
-    <div class="text_sunset"> sunset </div>
-    <div class="text_humidity"> humidity</div>
-    <div class="veloc_vento_mps"> {{veloc_vento_mps}} </div>
-    <div class="horario_nascer_sol"> {{horario_nascer_sol}} </div>
-    <div class="horario_por_do_sol">{{horario_por_do_sol}}</div>
-    <div class="humidade"> {{humidade}} </div>
+    <div class="icon_temp_atual"> <img src={{url_icon_temp_atual}} alt="icon_temp_atual" width="130" height="130"> </div>
+    <div class="text_dawn" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> dawn </div>
+    <div class="text_morning" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> morning</div>
+    <div class="text_afternoon" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> afternoon </div>
+    <div class="text_night" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> night </div>
+    <div class="icon_temp_dawn"> <img src={{url_icon_temp_dawn}} alt="icon_temp_dawn"></div>
+    <div class="icon_temp_morning"> <img src={{url_icon_temp_morning}} alt="icon_temp_morning"> </div>
+    <div class="icon_temp_afternoon"> <img src={{url_icon_temp_afternoon}} alt="icon_temp_afternoon"> </div>
+    <div class="icon_temp_night"><img src={{url_icon_temp_night}} alt="icon_temp_night"> </div>
+    <div class="temp_dawn" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{temp_dawn}}°C</div>
+    <div class="temp_morning" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{temp_morning}}°C</div>
+    <div class="temp_afternoon" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{temp_afternoon}}°C </div>
+    <div class="temp_night" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{temp_night}}°C </div>
+    <div class="text_wind_speed" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> wind speed </div>
+    <div class="text_sunrise" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> sunrise </div>
+    <div class="text_sunset" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> sunset </div>
+    <div class="text_humidity" [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> humidity</div>
+    <div class="veloc_vento_mps"  [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{veloc_vento_mps}} </div>
+    <div class="horario_nascer_sol"  [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{horario_nascer_sol}} </div>
+    <div class="horario_por_do_sol"  [ngStyle]="{'color': text_color_white? 'white' : 'black'}">{{horario_por_do_sol}}</div>
+    <div class="humidade"  [ngStyle]="{'color': text_color_white? 'white' : 'black'}"> {{humidade}} </div>
   </div>
