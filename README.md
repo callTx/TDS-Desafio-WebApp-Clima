@@ -26,6 +26,6 @@ angular-webappclima
 Para executar os testes de cada unidade do Angular, fazer o uso dos comandos disponívies em [Doc](https://github.com/callTx/TDS-Desafio-WebApp-Clima/tree/main/angular-webappclima).
 
 ## Imagem docker da Aplicação
-Para fazer o uso da aplicação conteinizada, basta fazer o clone da imagem do repositório [repo-dockerhub](https://hub.docker.com/repository/docker/calltx/angular-wepappclima/general) e executar o container. O container irá executar a aplicação por meio do serviço `nginx` usando a porta `8081`. Logo em seguida, para visualizar aplicação no browser, basta usar digitar: 
+Para fazer o uso da aplicação conteinizada, basta fazer o clone da imagem do repositório [repo-dockerhub](https://hub.docker.com/repository/docker/calltx/angular-wepappclima/general) e executar o container. O container irá executar a aplicação por meio do serviço `nginx` usando a porta `8081`. Logo em seguida, para visualizar aplicação no browser, basta digitar: 
 `localhost:8081`
 
