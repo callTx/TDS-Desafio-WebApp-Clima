@@ -72,6 +72,8 @@
 //Estiliza texto grande h1
 .arrow-back {
     color: #000000;
+    position:relative;
+    
     
 }
 
@@ -88,13 +90,14 @@
 
 .container {  display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr 1.3fr 1.7fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 1.2fr 0.5fr 1.5fr 2fr 0.1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
       "nomecidade nomecidade nomecidade nomecidade"
       "descricao descricao descricao descricao"
       "temp_atual temp_atual celcius_simbol celcius_simbol"
+      "temp_atual temp_atual temp_max temp_max"
       "temp_atual temp_atual temp_max temp_max"
       "temp_atual temp_atual temp_min temp_min"
       "icon_temp_atual icon_temp_atual icon_temp_atual icon_temp_atual"
@@ -111,19 +114,19 @@
 .celcius_simbol {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
+  grid-template-rows: 0.5fr 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     ". . ."
     ". . ."
     "celcius_simbol_value . ."; 
-  grid-area: 3 / 3 / 4 / 5; 
+  grid-area: 1 / 3 / 4 / 5; 
 }
 .celcius_simbol_value { grid-area: celcius_simbol_value; font-size: 25px; }
 .temp_max {
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-columns: 0.1fr 1fr 1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "icon_arrow_upper . ."
@@ -135,8 +138,8 @@
   .icon_arrow_upper { grid-area: icon_arrow_upper;}
   .temp_min {
     display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-columns: 0.1fr 0.1fr 0.1fr; 
+    grid-template-rows: 0.1fr 0.1fr 0.1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "icon_arrow_down . ."
@@ -166,10 +169,11 @@
 .horario_nascer_sol { grid-area: 11 / 2 / 12 / 3; margin-top: 40px; }
 .horario_por_do_sol { grid-area: 11 / 3 / 12 / 4; margin-top: 40px; }
 .humidade { grid-area: 11 / 4 / 12 / 5; margin-top: 40px; }
-.temp_atual_value { grid-area: 4 / 2 / 6 / 3; text-align: right; font-size: 100px; }
+.temp_atual_value { grid-area: 3 / 2 / 6 / 3; text-align: right; font-size: 150px; }
 
 .text_dawn,.icon_temp_dawn,.temp_dawn,.text_wind_speed,.veloc_vento_mps{
     text-align: center;
+    
 }
 
 .text_morning,.icon_temp_morning,.temp_morning,.text_sunrise,.horario_nascer_sol{
@@ -187,4 +191,11 @@
 .nomecidade,.descricao,.temp_atual,.celcius_simbol,.celcius_simbol_value,.temp_max,.temp_min,.text_dawn,.text_morning,.text_afternoon,.text_night,.temp_dawn,.temp_morning,.temp_afternoon,.temp_night,.text_wind_speed,.text_sunrise,.text_sunset,.text_humidity,.veloc_vento_mps,.horario_nascer_sol,.horario_por_do_sol,.humidade,.temp_atual_value {
     font-family: Helvetica, 'Helvetica Neue', sans-serif;
 }
-  
+
+.textBlack{
+    color: #000;
+}
+
+.textWhite{
+    color: white;
+}
