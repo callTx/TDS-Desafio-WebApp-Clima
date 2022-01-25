@@ -32,6 +32,7 @@ export class PagLocalidadeComponent implements OnInit {
   url_icon_temp_morning: any;
   url_icon_temp_afternoon: any;
   url_icon_temp_night: any;
+  text_color_white: any;
 
   //Injeta uma rota ativa para pegar o nome da cidade como parametro
   constructor(private weatherapiservices: WeatherapiService,private route: ActivatedRoute,private el: ElementRef,private renderer: Renderer2) {
@@ -119,6 +120,8 @@ export class PagLocalidadeComponent implements OnInit {
         this.descricao == "mist"
     ) {
       this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#57cbdb');
+      this.text_color_white = true;
+      //this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,"background","linear-gradient(rgba(79,206,232,1), rgba(51,138,155,1) 90%)");
     }else{
       if (this.descricao == "patchy rain nearby" ||
           this.descricao == "thundery outbreaks in nearby" ||
@@ -143,7 +146,8 @@ export class PagLocalidadeComponent implements OnInit {
 
       ) {
         this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#5d6574');
-
+        this.text_color_white = false;
+        //this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,"background","linear-gradient(rgba(93,101,116,1), rgba(41,44,50,1) 90%)");
       }else{
         if (this.descricao == "patchy snow nearby" ||
         this.descricao == "patchy sleet nearby" ||
@@ -170,6 +174,7 @@ export class PagLocalidadeComponent implements OnInit {
         this.descricao == "patchy light snow in area with thunder" ||
         this.descricao == "moderate or heavy snow in area with thunder" 
         ) {
+          this.text_color_white = false;
           this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#e0e0e0');
 
         }
